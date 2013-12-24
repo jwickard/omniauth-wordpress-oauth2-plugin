@@ -4,7 +4,7 @@ module OmniAuth
   module Strategies
     class WordpressOauth2Plugin < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
-      option :name, "wordpress-oauth2-plugin"
+      option :name, 'wordpress_oauth2'
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
