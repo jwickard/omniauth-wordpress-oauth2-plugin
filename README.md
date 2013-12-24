@@ -41,6 +41,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+## Add Provider to Wordpress
+Asuming you have already installed the wordpress oauth2 provider plugin, add a provider for this rails applicaiton to the plugin configuration:
+
+![alt tag](https://raw.github.com/jwickard/omniauth-wordpress-oauth2-plugin-example/master/config-screen.png)
+
 ## Contributing
 
 1. Fork it
