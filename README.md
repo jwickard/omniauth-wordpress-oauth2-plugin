@@ -22,14 +22,24 @@ And then execute:
 ## Usage
 
 ### Devise / Omniauth
-Add this provider to your config/initializers/devise.rb ex:
+Add provider to your config/initializers/devise.rb ex:
 
 ```
 config.omniauth :wordpress_oauth2, 'APP_KEY', 'APP_SECRET',
-                  strategy_class: OmniAuth::Strategies::WordpressOauth2Plugin, client_options: { site: 'http://yourcustomwordpress.com' }
+                  strategy_class: OmniAuth::Strategies::WordpressOauth2Plugin, 
+                  client_options: { site: 'http://yourcustomwordpress.com' }
 ```
 
 ### Omniauth / Rails
+Add provider to your config/initializers/omniauth.rb
+
+```
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :wordpress_oauth2, 'APP_KEY', 'APP_SECRET',
+                  strategy_class: OmniAuth::Strategies::WordpressOauth2Plugin, 
+                  client_options: { site: 'http://yourcustomwordpress.com' }
+end
+```
 
 ## Contributing
 
