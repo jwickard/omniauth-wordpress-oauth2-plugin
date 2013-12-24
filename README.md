@@ -1,24 +1,35 @@
 # Omniauth::Wordpress::Oauth2::Plugin
 
-A Wordpress Oauth2 Provider Plugin Strategy for Omniaut
+A Wordpress Oauth2 Provider Plugin Strategy for Omniauth
+
+Use with the Wordpress Oauth2 Provider plugin to turn  your wordpress install into an authentication provider: https://github.com/jwickard/wordpress-oauth
+
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-wordpress-oauth2-plugin'
+    gem 'omniauth-wordpress-oauth2-plugin', github: 'jwickard/omniauth-wordpress-oauth2-plugin'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+<!-- Or install it yourself as:
 
     $ gem install omniauth-wordpress-oauth2-plugin
-
+-->
 ## Usage
 
-TODO: Write usage instructions here
+### Devise / Omniauth
+Add this provider to your config/initializers/devise.rb ex:
+
+```
+config.omniauth :wordpress_oauth2, 'APP_KEY', 'APP_SECRET',
+                  strategy_class: OmniAuth::Strategies::WordpressOauth2Plugin, client_options: { site: 'http://yourcustomwordpress.com' }
+```
+
+### Omniauth / Rails
 
 ## Contributing
 
