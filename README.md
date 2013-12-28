@@ -78,6 +78,34 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 ```
 
+### Example Oauth Data
+
+```yaml
+--- !ruby/hash:OmniAuth::AuthHash
+provider: wordpress_oauth2
+uid: '2'
+info: !ruby/hash:OmniAuth::AuthHash::InfoHash
+  name: Joe Sandstone
+  email: jsandstone@example.com
+  nickname: jsand
+  urls: !ruby/hash:OmniAuth::AuthHash
+    Website: http://example.com
+credentials: !ruby/hash:OmniAuth::AuthHash
+  token: 4070b5be481b1a4110797763ac27359c1d1da3bb
+  refresh_token: 212597ee673d630cfb95a77a69900c7ead1d3e19
+  expires_at: 1387912450
+  expires: true
+extra: !ruby/hash:OmniAuth::AuthHash
+  ID: '2'
+  user_login: jsand
+  user_nicename: jsand
+  user_email: jsandstone@example.com
+  user_url: http://example.com
+  user_registered: '2013-12-12 15:29:34'
+  user_status: '0'
+  display_name: Joe Sandstone
+```
+
 ### Example application 
 
 https://github.com/jwickard/omniauth-wordpress-oauth2-plugin-example
