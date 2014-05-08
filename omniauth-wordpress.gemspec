@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'omniauth-wordpress-oauth2-plugin/version'
+require 'omniauth-wordpress/version'
 
 Gem::Specification.new do |spec|
   spec.add_dependency 'omniauth-oauth2'
 
-  spec.name          = "omniauth-wordpress-oauth2-plugin"
-  spec.version       = Omniauth::Wordpress::Oauth2::Plugin::VERSION
+  spec.name          = "omniauth-wordpress"
+  spec.version       = Omniauth::Wordpress::VERSION
   spec.authors       = ["Joel Wickard"]
   spec.email         = ["jwickard@gmail.com"]
   spec.description   = %q{A Wordpress Oauth2 Provider Plugin Strategy for Omniauth}
-  spec.summary       = %q{A Wordpress Oauth2 Provider Plugin Strategy for Omniaut}
+  spec.summary       = %q{A Wordpress Oauth2 Provider Plugin Strategy for Omniauth}
   spec.homepage      = ""
   spec.license       = "MIT"
 

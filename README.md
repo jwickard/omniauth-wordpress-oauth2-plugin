@@ -1,4 +1,4 @@
-# Omniauth::Wordpress::Oauth2::Plugin
+# Omniauth::Wordpress
 
 A Wordpress Oauth2 Provider Plugin Strategy for Omniauth
 
