@@ -1,4 +1,5 @@
 require 'omniauth-oauth2'
+require 'pp'
 
 module OmniAuth
   module Strategies
@@ -29,12 +30,12 @@ module OmniAuth
       end
 
       extra do
-        raw_info
+        { :raw_info => raw_info }
       end
 
       def raw_info
-        puts access_token.to_yaml
-        @raw_info ||= access_token.get('/oauth/request_access').parsed
+        puts access_token.get('/oauth/request_access').inspect
+        access_token.get('/oauth/request_access').parsed
       end
     end
   end
