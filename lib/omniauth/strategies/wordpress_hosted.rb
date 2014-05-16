@@ -1,11 +1,10 @@
 require 'omniauth-oauth2'
-require 'pp'
 
 module OmniAuth
   module Strategies
-    class Wordpress < OmniAuth::Strategies::OAuth2
+    class WordpressHosted < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
-      option :name, 'wordpress'
+      option :name, 'wordpress_hosted'
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.

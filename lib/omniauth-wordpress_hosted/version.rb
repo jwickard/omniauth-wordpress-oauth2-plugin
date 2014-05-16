@@ -1,5 +1,5 @@
 module Omniauth
-  module Wordpress
+  module WordpressHosted
     VERSION = "0.0.2"
   end
 end

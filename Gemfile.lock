@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-wordpress (0.0.12)
+    omniauth-wordpress_hosted (0.0.2)
       omniauth-oauth2
 
 GEM
@@ -31,7 +31,7 @@ GEM
       oauth2 (~> 0.9.3)
       omniauth (~> 1.2)
     rack (1.5.2)
-    rake (10.3.1)
+    rake (10.3.2)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -46,6 +46,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.3)
-  omniauth-wordpress!
+  omniauth-wordpress_hosted!
   rake
   rspec
