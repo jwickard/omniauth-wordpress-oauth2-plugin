@@ -2,13 +2,13 @@ require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class WordpressOauth2Plugin < OmniAuth::Strategies::OAuth2
+    class WordpressHosted < OmniAuth::Strategies::OAuth2
       # Give your strategy a name.
-      option :name, 'wordpress_oauth2'
+      option :name, 'wordpress_hosted'
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
-      option :client_options, { token_url: "/oauth/request_token", access_url: "/oauth/request_access"}
+      option :client_options, { token_url: "/oauth/request_token", access_url: "/oauth/request_access" }
 
 
       # These are called after authentication has succeeded. If
@@ -24,17 +24,15 @@ module OmniAuth
             email: raw_info['user_email'],
             nickname: raw_info['user_nicename'],
             urls: { "Website" => raw_info['user_url'] }
-
         }
       end
 
       extra do
-        raw_info
+        { :raw_info => raw_info }
       end
 
       def raw_info
-        puts access_token.to_yaml
-        @raw_info ||= access_token.get('/oauth/request_access').parsed
+        @raw_info = access_token.get(access_token.options[:access_url], :params => { access_token: access_token.token } ).parsed || {}
       end
     end
   end
