@@ -9,7 +9,7 @@ Use with the Wordpress Oauth2 Provider plugin to turn  your wordpress install in
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-wordpress-oauth2-plugin', github: 'jwickard/omniauth-wordpress-oauth2-plugin'
+    gem 'omniauth-wordpress_hosted', github: 'jwickard/omniauth-wordpress-oauth2-plugin'
 
 And then execute:
 
