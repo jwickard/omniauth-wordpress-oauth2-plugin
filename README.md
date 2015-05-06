@@ -35,8 +35,8 @@ Add provider to your `config/initializers/omniauth.rb` ex:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :wordpress_oauth2, 'APP_KEY', 'APP_SECRET',
-                  strategy_class: OmniAuth::Strategies::WordpressOauth2Plugin, 
+  provider :wordpress_hosted, 'APP_KEY', 'APP_SECRET',
+                  strategy_class: OmniAuth::Strategies::WordpressHosted, 
                   client_options: { site: 'http://yourcustomwordpress.com' }
 end
 ```
