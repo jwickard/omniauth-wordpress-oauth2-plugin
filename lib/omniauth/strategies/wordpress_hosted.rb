@@ -8,7 +8,7 @@ module OmniAuth
 
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
-      option :client_options, { token_url: "/oauth/token", authorize_url: "/oauth/authorize" }
+      option :client_options, { }
 
 
       # These are called after authentication has succeeded. If
@@ -22,10 +22,18 @@ module OmniAuth
         {
           name: raw_info['display_name'],
           email: raw_info['user_email'],
-          nickname: raw_info['user_nicename']
+          nickname: raw_info['user_nicename'],
+          urls: { "Website" => raw_info['user_url'] }
         }
       end
 
+      extra do
+        { :raw_info => raw_info }
+      end
+
+      def raw_info
+        @raw_info ||= access_token.get('/me').parsed
+      end
     end
   end
 end
