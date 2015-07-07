@@ -32,7 +32,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get("/me?access_token=#{:access_token}").parsed
+        @raw_info ||= access_token.get("/oauth/me").parsed
       end
     end
   end
