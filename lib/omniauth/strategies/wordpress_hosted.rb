@@ -32,8 +32,8 @@ module OmniAuth
       end
 
       def raw_info
-        puts access_token
-        @raw_info ||= access_token.get("/me").parsed
+        puts access_token.token
+        @raw_info ||= access_token.get("/me", :params => { 'access_token' => access_token.token }).parsed
       end
     end
   end
