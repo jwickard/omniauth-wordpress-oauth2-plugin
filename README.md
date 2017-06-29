@@ -26,7 +26,7 @@ Add provider to your `config/initializers/devise.rb` ex:
 
 ```ruby
 config.omniauth :wordpress_oauth2, 'APP_KEY', 'APP_SECRET',
-                  strategy_class: OmniAuth::Strategies::WordpressOauth2Plugin, 
+                  strategy_class: OmniAuth::Strategies::WordpressHosted, 
                   client_options: { site: 'http://yourcustomwordpress.com' }
 ```
 
