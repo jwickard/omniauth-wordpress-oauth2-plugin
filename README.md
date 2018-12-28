@@ -27,7 +27,7 @@ Add provider to your `config/initializers/devise.rb` ex:
 ```ruby
 config.omniauth :wordpress_oauth2, 'APP_KEY', 'APP_SECRET',
                   strategy_class: OmniAuth::Strategies::WordpressHosted, 
-                  client_options: { site: 'http://yourcustomwordpress.com' }
+                  client_options: { site: 'http://yourcustomwordpress.com', token_url: 'http://yourcustomwordpress.com/oauth/request_token' }
 ```
 
 ### Omniauth / Rails
@@ -37,7 +37,7 @@ Add provider to your `config/initializers/omniauth.rb` ex:
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :wordpress_hosted, 'APP_KEY', 'APP_SECRET',
                   strategy_class: OmniAuth::Strategies::WordpressHosted, 
-                  client_options: { site: 'http://yourcustomwordpress.com' }
+                  client_options: { site: 'http://yourcustomwordpress.com', token_url: 'http://yourcustomwordpress.com/oauth/request_token' }
 end
 ```
 
